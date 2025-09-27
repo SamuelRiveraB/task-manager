@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UOoQ4zYx7TQ=",
+  "success": true,
+  "projectFilePath": "/Users/samuelrivera/Desktop/Development/task-manager/backend/backend.csproj",
+  "expectedPackageFiles": [
+    "/Users/samuelrivera/.nuget/packages/microsoft.aspnetcore.openapi/9.0.9/microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "/Users/samuelrivera/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
