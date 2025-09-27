@@ -1,0 +1,35 @@
+# Build output
+bin/
+obj/
+logs/
+
+# Rider / Visual Studio / VS Code
+.vs/
+.idea/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+
+# Compiled binaries
+*.dll
+*.exe
+*.pdb
+
+# NuGet
+*.nupkg
+*.snupkg
+# Ignore local packages except build/
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# Dotnet build artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Environment & config
+.env
+*.secrets.json
+appsettings.Development.json
