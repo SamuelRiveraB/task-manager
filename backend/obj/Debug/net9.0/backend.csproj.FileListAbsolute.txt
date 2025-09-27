@@ -30,3 +30,4 @@
 /Users/samuelrivera/Desktop/Development/task-manager/backend/obj/Debug/net9.0/backend.pdb
 /Users/samuelrivera/Desktop/Development/task-manager/backend/obj/Debug/net9.0/backend.genruntimeconfig.cache
 /Users/samuelrivera/Desktop/Development/task-manager/backend/obj/Debug/net9.0/ref/backend.dll
+/Users/samuelrivera/Desktop/Development/task-manager/backend/obj/Debug/net9.0/backend.sourcelink.json
