@@ -3,6 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -10,6 +11,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseDeveloperExceptionPage();
+}
+if (!app.Environment.IsDevelopment()) {
+    app.UseExceptionHandler("/error");
 }
 
 app.UseHttpsRedirection();
@@ -19,7 +24,9 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+app.MapHealthChecks("/health");
 app.MapGet("/", () => "Hello World");
+app.MapGet("error", () => "Unfortunately, an error occurred.");
 
 app.MapGet("/weatherforecast", () =>
 {
