@@ -1,0 +1,19 @@
+<h3>Tasks</h3>
+
+<input [formControl]="newTaskTitle" placeholder="New task" />
+<button (click)="addTask()">Add Task</button>
+
+<ul>
+  @for (task of tasks(); track task.id) {
+  <li>
+    <input
+      type="checkbox"
+      [checked]="task.isCompleted"
+      (change)="toggleTask(task)"
+    />
+    {{ task.title }}
+  </li>
+  } @empty {
+  <li>No tasks yet. Add one above!</li>
+  }
+</ul>

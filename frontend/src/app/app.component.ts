@@ -1,16 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [ProjectListComponent, ProjectDetailComponent],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1>Task Manager</h1>
+    <div style="display: flex; gap: 2rem;">
+      <app-project-list
+        (selectProject)="selectedProjectId = $event"
+      ></app-project-list>
 
-    <router-outlet />
+      @if (selectedProjectId) {
+      <app-project-detail [projectId]="selectedProjectId"></app-project-detail>
+      }
+    </div>
   `,
-  styles: [],
 })
 export class AppComponent {
-  title = 'frontend';
+  selectedProjectId?: number;
 }

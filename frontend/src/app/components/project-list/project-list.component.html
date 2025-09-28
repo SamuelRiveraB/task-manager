@@ -1,0 +1,14 @@
+<h2>Projects</h2>
+
+<input [formControl]="newProjectName" placeholder="New project name" />
+<button (click)="addProject()">Add Project</button>
+
+<ul>
+  @for (project of projects(); track project.id) {
+  <li (click)="chooseProject(project.id)" style="cursor: pointer">
+    {{ project.name }} ({{ project.tasks.length }} tasks)
+  </li>
+  } @empty {
+  <li>No projects yet. Add one above!</li>
+  }
+</ul>
